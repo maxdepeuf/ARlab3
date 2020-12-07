@@ -49,8 +49,9 @@
     </div>
      <a-scene
         vr-mode-ui="enabled: false;"
-        renderer='antialias: true; alpha: true; precision: mediump;'
-        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+        renderer='antialias: true; alpha: true; precision: high;'
+        embedded 
+		arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
         <a-assets>
             <video src="https://maxdepeuf.github.io/ARlab3/video.mp4"
@@ -63,11 +64,12 @@
             videohandler
             type='nft' 
 			url="https://maxdepeuf.github.io/ARlab3/fig/fig"
-			smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+			smooth="true" smoothCount="10" smoothTolerance="0.000000000001" smoothThreshold="5"
         >
             <a-video
                 src="#vid"
                 position='50 150 -100'
+				rotation='0 90 0'
                 width='300'
                 height='175'
                 >
