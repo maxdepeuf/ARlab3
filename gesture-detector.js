@@ -77,7 +77,7 @@ AFRAME.registerComponent("gesture-detector", {
         positionChange: {
           x: currentState.position.x - previousState.position.x,
 
-          z: currentState.position.z - previousState.position.z
+          y: currentState.position.y - previousState.position.y
         }
       };
 
@@ -123,11 +123,11 @@ AFRAME.registerComponent("gesture-detector", {
       touchList.reduce((sum, touch) => sum + touch.clientX, 0) /
       touchList.length;
 
-    const centerPositionRawZ =
-      touchList.reduce((sum, touch) => sum + touch.clientZ, 0) /
+    const centerPositionRawY =
+      touchList.reduce((sum, touch) => sum + touch.clientY, 0) /
       touchList.length;
 
-    touchState.positionRaw = { x: centerPositionRawX, z: centerPositionRawZ };
+    touchState.positionRaw = { x: centerPositionRawX, y: centerPositionRawY };
 
     // Scale touch position and spread by average of window dimensions
 
@@ -135,7 +135,7 @@ AFRAME.registerComponent("gesture-detector", {
 
     touchState.position = {
       x: centerPositionRawX * screenScale,
-      z: centerPositionRawZ * screenScale
+      y: centerPositionRawY * screenScale
     };
 
     // Calculate average spread of touches from the center point
@@ -147,7 +147,7 @@ AFRAME.registerComponent("gesture-detector", {
             sum +
             Math.sqrt(
               Math.pow(centerPositionRawX - touch.clientX, 2) +
-                Math.pow(centerPositionRawZ - touch.clientY, 2)
+                Math.pow(centerPositionRawY - touch.clientY, 2)
             )
           );
         }, 0) / touchList.length;
