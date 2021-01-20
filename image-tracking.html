@@ -25,9 +25,28 @@
       <a-nft
         type="nft"
         url="https://maxdepeuf.github.io/ARlab3/fig/fig"
-		url="https://maxdepeuf.github.io/ARlab3/fig/fig2"
-        
-		smooth="true"
+        smooth="true"
+        smoothCount="100"
+        smoothTolerance=".000000000000001"
+        smoothThreshold="50"
+		raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <a-entity
+          gltf-model="https://maxdepeuf.github.io/ARlab3/trex/pvt2.glb"
+		  scale="-150 150 -150"
+		  position="150 0 -100"
+		  material="side: double"
+          class="clickable"
+          gesture-handler="minScale: 0.25; maxScale: 10"
+		         >
+        </a-entity>
+      </a-nft>
+	        <a-nft
+        type="nft"
+        url="https://maxdepeuf.github.io/ARlab3/fig/fig2"
+        smooth="true"
         smoothCount="100"
         smoothTolerance=".000000000000001"
         smoothThreshold="50"
