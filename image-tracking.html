@@ -13,19 +13,6 @@
     <script src="gesture-handler.js"></script>
   </head>
 
-<script>
-    AFRAME.registerComponent('registerevents', {
-		init: function () {
-			var marker = this.el;
-
-			marker.addEventListener('markerFound', function() {
-				alert(marker.getAttribute('name'));
-			});
-		}
-	});
-</script>
-
-
   <body>
     <a-scene
       arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
