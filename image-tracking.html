@@ -6,12 +6,25 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="styles.css" />
-
+	<script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/3.3.1/aframe/build/aframe-ar-nft.js"></script>
 	<script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
   </head>
+
+<script>
+    AFRAME.registerComponent('registerevents', {
+		init: function () {
+			var marker = this.el;
+
+			marker.addEventListener('markerFound', function() {
+				alert(marker.getAttribute('name'));
+			});
+		}
+	});
+</script>
+
 
   <body>
     <a-scene
@@ -22,8 +35,24 @@
       gesture-detector
       id="scene"
     >
-      </a-nft>
+   
 	        <a-nft
+			 registerevents
+            name="fig"
+        type="nft"
+        url="https://maxdepeuf.github.io/ARlab3/fig/fig"
+        smooth="true"
+        smoothCount="100"
+        smoothTolerance=".000000000000001"
+        smoothThreshold="50"
+		raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+	   </a-nft>
+	 	        <a-nft
+			 registerevents
+            name="fig2"
         type="nft"
         url="https://maxdepeuf.github.io/ARlab3/fig/fig2"
         smooth="true"
@@ -34,6 +63,8 @@
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
       >
+	   </a-nft>  
+	   
         <a-entity
           gltf-model="https://maxdepeuf.github.io/ARlab3/trex/pvt2.glb"
 		  scale="-150 150 -150"
@@ -43,7 +74,7 @@
           gesture-handler="minScale: 0.25; maxScale: 10"
 		         >
         </a-entity>
-      </a-nft>
+     
       <a-entity camera></a-entity>
     </a-scene>
   </body>
