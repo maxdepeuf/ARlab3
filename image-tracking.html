@@ -29,8 +29,16 @@
       gesture-detector
       id="scene"
     >
+	
+	        <a-assets>
+            <video src="https://maxdepeuf.github.io/ARlab3/trex/pre.mp4"
+                preload="auto" id="vid" response-type="arraybuffer" loop
+                crossorigin webkit-playsinline autoplay muted playsinline>
+            </video>
+        </a-assets>
    
    	        <a-nft
+			videohandler
         type="nft"
         url="https://maxdepeuf.github.io/ARlab3/fig/fig2"
         smooth="true"
@@ -41,15 +49,15 @@
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
       >
-        <a-entity
-          gltf-model="https://maxdepeuf.github.io/ARlab3/trex/pvt2.glb"
-		  scale="-150 150 -150"
-		  position="0 0 0"
-		  material="side: double"
-          class="clickable"
-          gesture-handler="minScale: 0.25; maxScale: 10"
-		         >
-        </a-entity>
+            <a-video
+                src="#vid"
+                
+				rotation= '90 0 0'
+				position='200 10 0'
+                width='300'
+                height='175'
+                >
+            </a-video>
       </a-nft>
    
 	        <a-nft
