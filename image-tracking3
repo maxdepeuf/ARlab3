@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>AR LAB LIBM</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="aframe.min.js"></script>
+    <script src="aframe-ar-nft.js"></script>
+	
+	<script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
+  </head>
+
+  
+  <body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: absolute; top: 10px; width:100%; text-align: center; z-index: 1;'>
+	MOREL - BOWEN - 3D AR
+	<br/>
+	<a href='https://libm.univ-st-etienne.fr/fr/index.html' target='_blank'>LIBM Laboratory</a>
+</div>
+  
+  
+    <a-scene
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+	
+   
+	        <a-nft
+        type="nft"
+        url="https://maxdepeuf.github.io/ARlab3/fig/fig"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
+		raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <a-entity
+          gltf-model="https://maxdepeuf.github.io/ARlab3/trex/pvt2.glb"
+		  scale="75 75 75"
+		  position="0 0 -111"
+		  rotation= '90 0 0'
+		  material="side: double"
+          class="clickable"
+          gesture-handler="minScale: 0.5; maxScale: 2"
+		         >
+        </a-entity>
+      </a-nft>
+	  
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
