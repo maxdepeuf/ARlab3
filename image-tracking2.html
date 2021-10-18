@@ -45,7 +45,7 @@
 
 <body style='margin : 0px; overflow: hidden;'>
     <div class="arjs-loader">
-        <div>Loading, please wait...</div>
+        <div>LIBM AR LAB Loading \n please wait...</div>
     </div>
     <a-scene
         vr-mode-ui="enabled: false;"
@@ -65,17 +65,16 @@
         url="https://maxdepeuf.github.io/ARlab3/fig/fig2"
         
 		smooth="true"
-        smoothCount="100"
-        smoothTolerance=".000000000000001"
-        smoothThreshold="50"
+     	smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
         >
             <a-video
                 src="#vid"
-                
-				rotation= '90 0 0'
-				position='0 0 0'
-                width='450'
-                height='263'
+               	rotation= '90 0 0'
+		position='285 0 -167'
+                width='570'
+                height='333'
                 >
             </a-video>
         </a-nft>
